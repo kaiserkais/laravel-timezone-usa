@@ -18,7 +18,7 @@ class Timezone
             return __('Empty');
         }
 
-        $timezone = (auth()->user()->timezone) ?? 'America/New_York';
+        $timezone = (auth()->user()->timezone) ?? zone_session();
         
         $enableTranslation = $enableTranslation !== null ? $enableTranslation : config('timezone.enableTranslation');
         
